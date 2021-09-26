@@ -23,7 +23,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 // app.use(cors({
-//     origin: "https://vexer-dashboard-frontend-nzgszvmz0-he1utu.vercel.app/",
+//     origin: "https://happy-saha-d5b576.netlify.app/",
 //     credentials: true
 // }))
 app.use(function(req, res, next) {
