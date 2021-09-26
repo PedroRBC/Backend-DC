@@ -3,9 +3,9 @@ const passport = require('passport')
 
 app.get('/discord', passport.authenticate('discord'));
 app.get('/discord/redirect', passport.authenticate('discord', {
-    failureRedirect: 'http://localhost:3000/'
+    failureRedirect: 'https://vexer-dashboard-frontend.vercel.app/'
 }), (req,res) => {
-    res.redirect('http://localhost:3000/account')
+    res.redirect('https://vexer-dashboard-frontend.vercel.app/account')
 })
 app.get('/', (req,res) => {
     if(req.user) {
