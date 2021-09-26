@@ -30,6 +30,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use('/api', aplicatie)
 
-app.listen(80, () => {
+app.listen(8080, () => {
     console.log('A pornit back-endu')
 })
