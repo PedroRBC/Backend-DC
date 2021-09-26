@@ -30,6 +30,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use('/api', aplicatie)
 
-app.listen(8080, () => {
-    console.log('A pornit back-endu')
+app.listen(cfg.port || 5000, () => {
+    console.log('Work!')
 })
