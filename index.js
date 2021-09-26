@@ -23,7 +23,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors({
-    origin: ["https://vexer-dashboard-frontend-ixvxftcjb-he1utu.vercel.app/"],
+    origin: ["https://vexer-dashboard-frontend-ixvxftcjb-he1utu.vercel.app/", "http://vexer-dashboard-frontend-ixvxftcjb-he1utu.vercel.app/"],
     credentials: true
 }))
 app.use(express.json())
