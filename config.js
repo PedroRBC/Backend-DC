@@ -1,9 +1,10 @@
 module.exports = {
-    token: "ODg0MTU5NDUwNzQxNjA4NTEw.YTUbpw.BGIMZcZlP-wK5My1Tf6ATUmke-Y",
-    prefix: "v-",
-    database: "mongodb+srv://Helutu:gN3HVnOFlY6ZbSkf@cluster0.9o4ci.mongodb.net/vexer?retryWrites=true&w=majority",
-    clientId: "884159450741608510",
-    clientSecret: "ARoLSiDlFT_6i0FiuQpk7ukHLi6YaIC5",
-    callbackurl: "/api/auth/discord/redirect",
-    port: 5000
+    token: "", // token from bot
+    prefix: "v-", // default prefix
+    database: "", // link from mongodb
+    clientId: "", //client id from disocrd
+    clientSecret: "", // client secret from discord
+    callbackurl: "/api/auth/discord/redirect", // callback
+    port: 1337, // port
+    FRONDEND_URL: "http://localhost:3000" // Front-End URL
 }

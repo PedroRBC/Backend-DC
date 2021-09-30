@@ -30,6 +30,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use('/api', aplicatie)
 
-app.listen(process.env.PORT || 80, () => {
+app.listen(cfg.port, () => {
     console.log('Work!')
 })

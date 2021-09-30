@@ -1,11 +1,11 @@
 const app = require('express').Router()
 const passport = require('passport')
-
+const cfg = require('../../config')
 app.get('/discord', passport.authenticate('discord'));
 app.get('/discord/redirect', passport.authenticate('discord', {
-    failureRedirect: 'https://happy-saha-d5b576.netlify.app/'
+    failureRedirect: `${cfg.FRONDEND_URL}/`
 }), (req,res) => {
-    res.redirect('https://happy-saha-d5b576.netlify.app/account')
+    res.redirect(`${cfg.FRONDEND_URL}/account`)
 })
 app.get('/', (req,res) => {
     if(req.user) {
