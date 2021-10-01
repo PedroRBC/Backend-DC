@@ -10,3 +10,8 @@ This is the backend to the dashboard.
 - Go to **OAuth2**.
 - At the **redirect** enter: `http://backend-url.com/api/auth/discord/redirect`
 - After that, save.
+
+
+## Found a bug?
+
+Submit your issue [here](https://github.com/He1utu/Discord-Dashboard-backEnd/issues/new) or [contact me](http://helutu.cf/).
