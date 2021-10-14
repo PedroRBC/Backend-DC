@@ -2,6 +2,7 @@ require('./Routers/strategies/discord');
 const express = require('express')
 const app = express();
 const cors = require('cors')
+const morgan = require('morgan')
 const passport = require('passport')
 let mongoose = require('mongoose')
 const cfg = require('./config')
@@ -23,10 +24,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors({
-	origin: ["http://localhost:3000"],
+	origin: ["http://localhost:8000", "http://pedrorbc.ddns.net:8000", "http://192.168.15.27:8000", "http://pedrorbc.ddns.net:8090",],
 	credentials: true
 }))
+
 app.use(express.json())
+app.use(morgan("dev"));
 app.use(express.urlencoded({extended: true}))
 app.use('/api', aplicatie)
 

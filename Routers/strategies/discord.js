@@ -21,7 +21,8 @@ passport.use(
     callbackURL: config.callbackurl,
     scope: ['identify', 'guilds']
   }, async (accesToken, refreshToken, profile, done) => {
-    const { id, username, discriminator, avatar, guilds } = profile;
+    var { id, username, discriminator, avatar, guilds } = profile;
+    if (avatar == null) avatar = 'null'
     try {
         const findUser = await DiscordUser.findOneAndUpdate({discordId: id}, {
             discordTag:`${username}#${discriminator}`,

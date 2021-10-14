@@ -1,12 +1,15 @@
 const { Schema, model } = require('mongoose')
 const cfg = require('../config')
 let schema = Schema({
-    guildID: {
+    id: {
         type: String
     },
     prefix: {
         type: String,
         default: cfg.prefix
+    },
+    name: {
+        type: String
     }
 })
 
