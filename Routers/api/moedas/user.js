@@ -1,6 +1,6 @@
 const app = require('express').Router()
-const MoedasSchema = require("../../Models/moedas");
-const config = require('../../config')
+const MoedasSchema = require("../../../Models/moedas");
+const config = require('../../../config')
 
 app.get('/', (req,res) => {
     if(req.user) {

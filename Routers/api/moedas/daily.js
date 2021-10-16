@@ -1,5 +1,5 @@
 const app = require('express').Router()
-const MoedasSchema = require("../../Models/moedas");
+const MoedasSchema = require("../../../Models/moedas");
 
 app.get('/', (req, res)=>{
     res.send('good!')

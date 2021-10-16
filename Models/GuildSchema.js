@@ -1,14 +1,10 @@
 const { Schema, model } = require('mongoose')
-const cfg = require('../config')
 let schema = Schema({
-    id: {
-        type: String
-    },
+    _id: Schema.Types.ObjectId,
+    id: String,
+    name: String,
     prefix: {
-        type: String,
-        default: cfg.prefix
-    },
-    name: {
+        default: '!',
         type: String
     }
 })
