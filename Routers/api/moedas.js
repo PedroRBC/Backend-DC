@@ -1,8 +1,11 @@
 const app = require("express").Router();
 const MoedasSchema = require("../../Models/moedas");
 const config = require('../../config')
+const user = require('./user.js')
 
 const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
+
+app.use('/user', user)
 
 app.get("/board", async (req, res) => {
     var users = await MoedasSchema.find().sort({moedas: 'desc'}).limit(10)
@@ -38,7 +41,7 @@ app.get("/board", async (req, res) => {
           
           RESULT[Nn] = jsonsend
         } else {
-          const avatarUrl = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128`
+          const avatarUrl = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=512`
           let jsonsend = {
             name: user.username,
             id: user.id,

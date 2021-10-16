@@ -1,17 +1,11 @@
 {
-  "name": "vexerbe",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "back-end for dashboard vexer.",
+  "description": "backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "example",
-    "heroku"
-  ],
-  "author": "Helutu",
-  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.4",
     "connect-mongo": "^4.5.0",
