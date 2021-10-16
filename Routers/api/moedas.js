@@ -2,10 +2,12 @@ const app = require("express").Router();
 const MoedasSchema = require("../../Models/moedas");
 const config = require('../../config')
 const user = require('./user.js')
+const daily = require('./daily.js')
 
 const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 app.use('/user', user)
+app.use('/daily', daily)
 
 app.get("/board", async (req, res) => {
     var users = await MoedasSchema.find().sort({moedas: 'desc'}).limit(10)
