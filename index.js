@@ -1,4 +1,6 @@
 require('./Routers/strategies/discord');
+const fs = require("fs");
+const https = require("https");
 const express = require('express')
 const app = express();
 const cors = require('cors')
@@ -10,6 +12,13 @@ var session = require('express-session')
 mongoose.connect(cfg.database)
 let aplicatie = require('./Routers/api')
 const MongoDbStore = require('connect-mongo');
+
+const options = {
+    key: fs.readFileSync("certificado.key", 'utf-8'),
+    cert: fs.readFileSync("certificado.crt", 'utf-8'),
+    ca: fs.readFileSync("ca.crt", 'utf-8')
+  };
+
 app.use(session({
     secret: 'secret',
     cookie: {
@@ -24,7 +33,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors({
-	origin: ["http://localhost:8000", "http://pedrorbc.ddns.net:8000", "http://192.168.15.27:8000", "http://pedrorbc.ddns.net:8090",],
+	origin: ["http://localhost:8000", "http://pedroapi.guiartes.com.br:8000", "http://192.168.15.27:8000", "https://pedroapi.guiartes.com.br:8090", "https://pedro.guiartes.com.br"],
 	credentials: true
 }))
 
@@ -33,6 +42,5 @@ app.use(morgan("dev"));
 app.use(express.urlencoded({extended: true}))
 app.use('/api', aplicatie)
 
-app.listen(cfg.port, () => {
-    console.log('Work!')
-})
+
+https.createServer(options, app).listen(cfg.port);

@@ -31,7 +31,7 @@ app.get('/', async (req,res) => {
             name: user.username,
             id: user.id,
             moedas: users[Nn].moedas,
-            avatar: 'http://pedrorbc.ddns.net:8090/assets/default/default_user.jpg',
+            avatar: 'https://pedroapi.guiartes.com.br:8090/assets/default/default_user.jpg',
             key: `${Nn}000${user.id}`
           }
           
